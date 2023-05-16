@@ -49,6 +49,6 @@ Now we're ready to setup the Jupyter Server in the Docker container using WSL.
     make run
     ```
 
-7. Once the container is running, you can access Jupyter Notebook by navigating to `localhost:8888?token={YOUR_TOKEN}` in your browser. Make sure to replace `{YOUR_TOKEN}` with the actual token you set in your `.env` file during step 5.
+7. Once the container is running, you can access Jupyter Notebook by navigating to `http://localhost:8888?token={YOUR_TOKEN}` in your browser. Make sure to replace `{YOUR_TOKEN}` with the actual token you set in your `.env` file during step 5.
 
 8. You can now start coding! You can find some example notebooks in the `notebooks` folder.
