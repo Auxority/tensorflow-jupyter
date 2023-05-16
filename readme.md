@@ -42,11 +42,11 @@ Now we're ready to setup the Jupyter Server in the Docker container using WSL.
 
 5. Open the `.env` file you just created and configure your token there. You will need this token later.
 
-6. Run `docker compose up` to start the Docker container. This will take a while the first time you run it, but subsequent runs will be much faster.
+6. Run `make run` to start the Docker container. This will take a while the first time you run it, but subsequent runs will be much faster.
 
     ```sh
     # Start the Docker container
-    docker compose up
+    make run
     ```
 
 7. Once the container is running, you can access Jupyter Notebook by navigating to `localhost:8888?token={YOUR_TOKEN}` in your browser. Make sure to replace `{YOUR_TOKEN}` with the actual token you set in your `.env` file during step 5.
