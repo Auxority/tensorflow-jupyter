@@ -1,0 +1,13 @@
+# Cache files
+.ipynb_checkpoints/
+__pycache__/
+
+# Virtual environment for IDE intelisense
+.venv/
+
+# Environment variables
+.env
+
+# Data
+data/*
+!data/readme.md
