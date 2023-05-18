@@ -9,5 +9,5 @@ venv/
 .env
 
 # Data
-data/*
+**/data/*
 !data/readme.md
