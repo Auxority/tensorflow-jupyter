@@ -8,7 +8,7 @@ help: ## Show this help message
 .PHONY: init
 init: ## Creates the .env file
 	@echo "Creating the .env file..."
-	@cp .env.dist .env
+	@cp app/.env.dist app/.env
 
 .PHONY: build
 build: ## Builds the docker container
@@ -34,3 +34,24 @@ down: ## Stops and removes the docker container
 sh: ## Starts a shell in the docker container
 	@echo "Starting a shell in the docker container..."
 	@docker compose exec tensorflow-jupyter sh
+
+.PHONY: venv
+venv: ## Create a venv for IDE intellisense
+	@echo "Creating a virtual environment..."
+	@if [ "$(OS)" == "Windows_NT" ]; then \
+		make windows_venv; \
+	else \
+		make linux_venv; \
+	fi
+	@echo "Installing the requirements..."
+	pip install -r requirements.txt
+
+windows_venv:
+	@python -m venv venv
+	@echo "Activating the virtual environment..."
+	@venv/Scripts/activate
+
+linux_venv:
+	@python3 -m venv venv
+	@echo "Activating the virtual environment..."
+	@source venv/bin/activate

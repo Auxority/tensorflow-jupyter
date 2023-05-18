@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY requirements.txt .
 
+ENV PIP_ROOT_USER_ACTION=ignore
+
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt && \
     jupyter server --generate-config && \
